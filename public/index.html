@@ -7,7 +7,7 @@
     <title>SocketServer</title>
 </head>
 <body>
-    <h1>Acceso denegado</h1>
+    <h1>Flutter & socket </h1>
 
     <script src="socket.io/socket.io.js"> </script>
     <script>
@@ -27,6 +27,15 @@
         //Recibe el mensaje enviado
         socket.on('mensajes',(payload)=>{
             console.log(payload)
+        })
+
+        socket.on('nuevo-mensaje',(payload)=>{
+            console.log(payload)
+        })
+
+        socket.on('active-bands',(bands)=>{
+            console.clear()
+            console.table(bands)
         })
     </script> 
 </body>
